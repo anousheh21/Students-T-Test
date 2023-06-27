@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+/* styling to be used for multiple HTML pages */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,6 +19,8 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
+/* index.html specific styling */
 
 .enterButton {
     background-color: #BA160C;
@@ -36,4 +40,22 @@ body {
 
 .enterButton:active{ 
     transform: scale(0.98);
+}
+
+/* test.html specific styling */
+
+.testbody {
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.asample {
+    display: flex;
+    flex-direction: column;
+}
+
+.bsample {
+    display: flex;
+    flex-direction: column;
 }
