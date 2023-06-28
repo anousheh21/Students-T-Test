@@ -20,6 +20,13 @@ body {
     overflow: hidden;
 }
 
+.dataValueInput {
+    width: 70px;
+    height: 20px;
+    color: #344E41;
+    text-align: center;
+}
+
 /* index.html specific styling */
 
 .enterButton {
@@ -83,7 +90,7 @@ body {
     height: 45px;
 }
 
-.input:focus {
+input:focus {
     outline:#213129;
 }
 
