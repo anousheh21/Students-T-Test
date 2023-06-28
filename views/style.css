@@ -25,6 +25,7 @@ body {
     height: 20px;
     color: #344E41;
     text-align: center;
+    margin: 0;
 }
 
 /* index.html specific styling */
@@ -99,7 +100,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-.submitButton {
+.submitButton, .dataButton {
     margin: 10px;
     background-color:#DAD7CD ;
     color:#3A5A40;
@@ -110,12 +111,22 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     border: none;
 }
 
-.submitButton:hover {
+.submitButton:hover, .dataButton:hover {
     background-color: #D1D8C5;
 }
 
-.submitButton:active {
+.submitButton:active, .dataButton:active {
     transform: scale(0.98);
 }
+
+.addItems {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-items: flex-start;
+    align-items:center;
+    gap: -200px;
+}
+
 
 

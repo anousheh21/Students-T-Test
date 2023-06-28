@@ -8,6 +8,8 @@ const inputA = document.querySelector('.ainput')
 const inputB = document.querySelector('.binput')
 const addItemsA = document.getElementById('addItemsA')
 const addItemsB = document.getElementById('addItemsB')
+let a = ''
+let b = ''
 
 // Main
 
@@ -22,13 +24,20 @@ buttonA.addEventListener('click', () => {
         inputA.remove();
         buttonA.remove();
         for(i=0; i<a; i++) {
+            // Creates number input boxes for sample a
             let input = document.createElement("input")
             input.type = "number"
             input.name = "aValue" + i
-            input.classList.add("aValue", "dataValueInput")
+            input.classList.add("aValue", "dataValueInput", "dataValueInputA" + i)
             addItemsA.appendChild(input)
             addItemsA.appendChild(document.createElement("br"))
         }
+        // Creates button to submit data values for sample a
+        let dataButtonA = document.createElement("button")
+        dataButtonA.classList.add("dataButton", "dataButtonA")
+        dataButtonA.textContent = "Submit A"
+        dataButtonA.type = "submit"
+        addItemsA.appendChild(dataButtonA)
     }
     
 })
@@ -44,13 +53,20 @@ buttonB.addEventListener('click', () => {
         inputB.remove();
         buttonB.remove();
         for(i=0; i<b; i++) {
+            // Creates number input boxes for sample b
             let input = document.createElement("input")
             input.type = "number"
             input.name = "bValue" + i
-            input.classList.add("bValue", "dataValueInput")
+            input.classList.add("bValue", "dataValueInput", "dataValueInputB" + i)
             addItemsB.appendChild(input)
             addItemsB.appendChild(document.createElement("br"))
         }
+        // Creates button to submit data values for sample b
+        let dataButtonB = document.createElement("button")
+        dataButtonB.classList.add("dataButton", "dataButtonB")
+        dataButtonB.textContent = "Submit B"
+        addItemsB.appendChild(dataButtonB)
     }
 })
+
 
