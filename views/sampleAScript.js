@@ -10,6 +10,9 @@ const addItemsA = document.getElementById('addItemsA')
 const addItemsB = document.getElementById('addItemsB')
 let a = ''
 let b = ''
+let totalA = 0;
+let meanA = 0;
+const bURL = 'http://localhost:3000/sampleB.html'
 
 // Main
 
@@ -38,35 +41,21 @@ buttonA.addEventListener('click', () => {
         dataButtonA.textContent = "Submit A"
         dataButtonA.type = "submit"
         addItemsA.appendChild(dataButtonA)
+
+        // Adds functionality to dataButtonA
+        dataButtonA.addEventListener('click', () => {
+            let sampleSizeA = i;
+            for(i=0; i<a; i++) {
+                let value = document.querySelector('.dataValueInputA' + i ).value 
+                totalA += parseInt(value)
+            }
+            meanA = totalA/sampleSizeA;
+            window.location.assign(bURL)
+        })
     }
     
 })
 
-buttonB.addEventListener('click', () => {
-    let b = inputB.value;
-    if(b=='') {
-        subheadingB.textContent = 'Values Required'
-    } else if (b < 3 || b > 15) {
-        subheadingB.textContent = 'Invalid Sample Size'
-    } else {
-        subheadingB.textContent = 'Data Set';
-        inputB.remove();
-        buttonB.remove();
-        for(i=0; i<b; i++) {
-            // Creates number input boxes for sample b
-            let input = document.createElement("input")
-            input.type = "number"
-            input.name = "bValue" + i
-            input.classList.add("bValue", "dataValueInput", "dataValueInputB" + i)
-            addItemsB.appendChild(input)
-            addItemsB.appendChild(document.createElement("br"))
-        }
-        // Creates button to submit data values for sample b
-        let dataButtonB = document.createElement("button")
-        dataButtonB.classList.add("dataButton", "dataButtonB")
-        dataButtonB.textContent = "Submit B"
-        addItemsB.appendChild(dataButtonB)
-    }
-})
+
 
 
