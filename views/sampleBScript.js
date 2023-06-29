@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
           for (let j = 0; j < b; j++) { 
             let value = document.querySelector('.dataValueInputB' + j).value
             totalB += parseInt(value)
-            squareB += Math.pow(parseInt(value),2)
+            squareB += Math.pow(parseFloat(value),2)
           }
           meanB = totalB / sampleSizeB;
           localStorage.setItem('totalB', totalB)
