@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let b = ''
     let totalB = 0;
     let meanB = 0;
+    let squareB = 0;
     const resultsURL = 'http://localhost:3000/results.html'
   
     buttonB.addEventListener('click', () => {
@@ -40,9 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
           for (let j = 0; j < b; j++) { 
             let value = document.querySelector('.dataValueInputB' + j).value
             totalB += parseInt(value)
+            squareB += Math.pow(parseInt(value),2)
           }
           meanB = totalB / sampleSizeB;
+          localStorage.setItem('totalB', totalB)
           localStorage.setItem('meanB', meanB)
+          localStorage.setItem('squareB', squareB)
+          localStorage.setItem('sampleSizeB', sampleSizeB)
           window.location.assign(resultsURL)
           //window.location.href = resultsURL + '?meanB=' + meanB
         })

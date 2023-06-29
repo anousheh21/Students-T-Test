@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let a = ''
     let totalA = 0;
     let meanA = 0;
+    let squareA = 0;
     const bURL = 'http://localhost:3000/sampleB.html'
 
     buttonA.addEventListener('click', () => {
@@ -40,9 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 for(i=0; i<a; i++) {
                     let value = document.querySelector('.dataValueInputA' + i ).value 
                     totalA += parseInt(value)
+                    squareA += Math.pow(parseInt(value),2)
                 }
                 meanA = totalA / sampleSizeA;
+                localStorage.setItem('totalA', totalA)
                 localStorage.setItem('meanA', meanA)
+                localStorage.setItem('squareA', squareA)
+                localStorage.setItem('sampleSizeA', sampleSizeA)
                 window.location.assign(bURL)
             })
         }
