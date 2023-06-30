@@ -125,8 +125,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     align-items: stretch;
     align-items: flex-start;
     align-items:center;
-    gap: -200px;
 }
 
+.addItems input:not(:last-child) {
+    margin-bottom: -15px;
+}
+
+
+.blurb {
+    font-size: 18px;
+}
 
 

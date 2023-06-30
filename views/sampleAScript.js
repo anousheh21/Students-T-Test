@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem('sampleSizeA', sampleSizeA)
                 window.location.assign(bURL)
             })
+    
         }
         
     })
